@@ -16,7 +16,7 @@ module PumaStatsLogger
     def puma_options
       @puma_options ||= begin
         return nil unless File.exists?(puma_state_file)
-        YAML.load_file(puma_state_file)['config'].options
+        YAML.load_file(puma_state_file) #['config'].options
       end
     end
 
